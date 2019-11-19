@@ -14,17 +14,29 @@ const firebaseConfig = {
 
 class Firebase {
   constructor() {
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
+    // Use second app to create users without signing in.
+    // https://stackoverflow.com/questions/37517208/firebase-kicks-out-current-user/38013551#38013551
+    let primaryApp = firebase.apps.find(a => a.name === "Primary");
+    let secondaryApp = firebase.apps.find(a => a.name === "Secondary");
+    if (!primaryApp) {
+      primaryApp = firebase.initializeApp(firebaseConfig, "Primary");
+    }
+    if (!secondaryApp) {
+      secondaryApp = firebase.initializeApp(firebaseConfig, "Secondary");
     }
 
-    this.auth = firebase.auth();
-    this.firestore = firebase.firestore();
+    this.auth = primaryApp.auth();
+    this.auth2 = secondaryApp.auth();
+    this.firestore = primaryApp.firestore();
   }
 
   // *** Auth API ***
   doCreateUserWithEmailAndPassword = (email, password) =>
     this.auth.createUserWithEmailAndPassword(email, password);
+  doCreateUserWithEmailAndPasswordWithoutLogin = (email, password) =>
+    this.auth2
+      .createUserWithEmailAndPassword(email, password)
+      .then(res => this.auth2.signOut().then(() => res));
   doSignInWithEmailAndPassword = (email, password) =>
     this.auth.signInWithEmailAndPassword(email, password);
   doSignOut = () => this.auth.signOut();
@@ -32,10 +44,10 @@ class Firebase {
   doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 
   // *** Firestore ***
-  doCreatePatient = (medical_id, first_name, last_name, p1, p2, p3) =>
+  doCreatePatient = (uid, medical_id, first_name, last_name, p1, p2, p3) =>
     this.firestore
       .collection("patients")
-      .doc(medical_id)
+      .doc(uid)
       .set({
         medical_id,
         first_name,
@@ -43,23 +55,23 @@ class Firebase {
         p1,
         p2,
         p3
-      })
-  doCreateDoctor = (username, first_name, last_name, patients) =>
+      });
+  doCreateDoctor = (uid, username, first_name, last_name, patients) =>
     this.firestore
       .collection("doctors")
-      .doc(username)
+      .doc(uid)
       .set({
         username,
         first_name,
         last_name,
         patients
       });
-  doAddPatientToDoctor = (username, patient_medical_id) =>
+  doAddPatientToDoctor = (doctor_uid, patient_uid) =>
     this.firestore
       .collection("doctors")
-      .doc(username)
+      .doc(doctor_uid)
       .update({
-        patients: firebase.firestore.FieldValue.arrayUnion(patient_medical_id)
+        patients: firebase.firestore.FieldValue.arrayUnion(patient_uid)
       });
 }
 export default Firebase;

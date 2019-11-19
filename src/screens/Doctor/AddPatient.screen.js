@@ -1,6 +1,7 @@
 import React from "react";
 import { KeyboardAvoidingView, StyleSheet, View } from "react-native";
 import { Text, Button, Input, Icon } from "react-native-ui-kitten";
+import BackButton from "../../components/BackButton";
 import { withFirebase } from "../../firebase";
 
 const INITIAL_STATE = {
@@ -13,6 +14,7 @@ const INITIAL_STATE = {
 const AddPatientScreen = props => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+      <BackButton />
       <Text style={styles.title} category="h5">
         Add a patient.
       </Text>
@@ -28,7 +30,7 @@ class AddPatientFormBase extends React.Component {
     const { navigation, firebase } = this.props;
     const { first_name, last_name, medical_id } = this.state;
     firebase
-      .doCreateUserWithEmailAndPassword(
+      .doCreateUserWithEmailAndPasswordWithoutLogin(
         `${first_name.trim()}_${last_name.trim()}_${medical_id.trim()}@patient.com`,
         medical_id,
         "patient"
@@ -38,16 +40,27 @@ class AddPatientFormBase extends React.Component {
           .collection("roles")
           .doc(user.uid)
           .set({ role: "patient" })
+          .then(() =>
+            firebase.doCreatePatient(
+              user.uid,
+              medical_id,
+              first_name,
+              last_name,
+              [0, 1, 2, 0, 1, 1, 1, 0],
+              [0, 0, 1, 0, 0, 1, 0],
+              [1, 1, 1, 1, 0, 0, 0]
+            )
+          )
+          .then(() => user.uid)
       )
-      .then(() =>
-        firebase.doCreatePatient(
-          medical_id,
-          first_name,
-          last_name,
-          [0, 1, 2, 0, 1, 1, 1, 0],
-          [0, 0, 1, 0, 0, 1, 0],
-          [1, 1, 1, 1, 0, 0, 0]
-        )
+      .then(patient_uid =>
+        firebase.auth.onAuthStateChanged(user => {
+          if (!user) {
+            navigation.navigate("EntryNavigator");
+          } else {
+            return firebase.doAddPatientToDoctor(user.uid, patient_uid);
+          }
+        })
       )
       .then(() => {
         navigation.navigate("Patients");

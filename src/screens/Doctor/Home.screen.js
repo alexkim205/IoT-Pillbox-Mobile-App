@@ -42,7 +42,7 @@ class SignOutButtonBase extends React.Component {
         onPress={() => {
           this.props.firebase
             .doSignOut()
-            .then(() => this.props.navigation.navigate("EntryLoading"));
+            .then(() => this.props.navigation.navigate("EntryNavigator"));
         }}
         size="large"
       >

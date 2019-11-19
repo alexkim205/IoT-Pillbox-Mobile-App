@@ -2,6 +2,7 @@ import React from "react";
 import { KeyboardAvoidingView, StyleSheet, View } from "react-native";
 import { Text, Button, Input, Icon } from "react-native-ui-kitten";
 import { withFirebase } from "../../firebase";
+import BackButton from "../../components/BackButton";
 
 const INITIAL_STATE = {
   username: "",
@@ -13,10 +14,11 @@ const INITIAL_STATE = {
 const SignInScreen = props => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-            <Text style={styles.title} category="h5">
+      <BackButton/>
+      <Text style={styles.title} category="h5">
         Doctor Login
       </Text>
-      <SignInForm navigation={props.navigation}/>
+      <SignInForm navigation={props.navigation} />
     </KeyboardAvoidingView>
   );
 };
@@ -38,10 +40,7 @@ class SignInFormBase extends React.Component {
     const { navigation, firebase } = this.props;
     const { username, password } = this.state;
     firebase
-      .doSignInWithEmailAndPassword(
-        `${username}@doctor.com`,
-        password
-      )
+      .doSignInWithEmailAndPassword(`${username.trim()}@doctor.com`, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
         navigation.navigate("App");
@@ -82,7 +81,7 @@ class SignInFormBase extends React.Component {
         />
         <View style={styles.buttonbox}>
           <Button
-          appearance="filled"
+            appearance="filled"
             style={styles.buttonLeft}
             status={"primary"}
             onPress={this.onSubmit}
@@ -144,8 +143,8 @@ const styles = StyleSheet.create({
   },
   buttonbox: {
     marginVertical: 20,
-    display: 'flex',
-    flexDirection: 'row'
+    display: "flex",
+    flexDirection: "row"
   },
   buttonLeft: {
     flex: 1,

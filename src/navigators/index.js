@@ -6,15 +6,20 @@ import PatientNavigator from "./Patient.navigator";
 import EntryScreen from "../screens/Entry.screen";
 import EntryLoadingScreen from "../screens/EntryLoading.screen";
 
-const EntryNavigator = createStackNavigator({
-  Entry: { screen: EntryScreen },
-  Patient: { screen: PatientNavigator },
-  Doctor: { screen: DoctorNavigator }
-})
+const EntryNavigator = createStackNavigator(
+  {
+    Entry: { screen: EntryScreen },
+    Patient: { screen: PatientNavigator },
+    Doctor: { screen: DoctorNavigator }
+  },
+  {
+    headerMode: "none"
+  }
+);
 
 const MainNavigator = createSwitchNavigator({
   EntryLoading: { screen: EntryLoadingScreen },
-  EntryNavigator: {screen: EntryNavigator}
+  EntryNavigator: { screen: EntryNavigator }
 });
 
 export default createAppContainer(MainNavigator);

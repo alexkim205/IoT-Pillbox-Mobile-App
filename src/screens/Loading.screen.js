@@ -6,32 +6,21 @@ import { withFirebase } from "../firebase";
 
 class LoadingScreenBase extends React.Component {
   componentDidMount() {
-    const { navigation, firebase } = this.props;
+    const { navigation, firebase, forRole } = this.props;
     firebase.auth.onAuthStateChanged(user => {
       if (!user) {
-        navigation.navigate("EntryNavigator");
+        navigation.navigate("Auth");
       } else {
         firebase.firestore
           .collection("roles")
           .doc(user.uid)
           .get()
-          .then(userRole => {
-            if (userRole.role === "patient") {
-              navigation.dispatch(
-                NavigationActions.navigate({
-                  routeName: "EntryNavigator",
-                  action: NavigationActions.navigate({ routeName: "Patient" })
-                })
-              );
-            } else if (userRole.role === "doctor") {
-              navigation.dispatch(
-                NavigationActions.navigate({
-                  routeName: "EntryNavigator",
-                  action: NavigationActions.navigate({ routeName: "Doctor" })
-                })
-              );
+          .then(doc => {
+            const data = doc.data()
+            if (data.role === forRole) {
+              navigation.navigate("App");
             } else {
-              navigation.navigate("EntryNavigator");
+              navigation.navigate("Auth");
             }
           });
       }

@@ -2,6 +2,7 @@ import React from "react";
 import { KeyboardAvoidingView, StyleSheet, View } from "react-native";
 import { Text, Button, Input, Icon } from "react-native-ui-kitten";
 import { withFirebase } from "../../firebase";
+import BackButton from "../../components/BackButton";
 
 const INITIAL_STATE = {
   username: "",
@@ -15,6 +16,7 @@ const INITIAL_STATE = {
 const SignUpScreen = props => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+      <BackButton />
       <SignUpForm navigation={props.navigation} />
     </KeyboardAvoidingView>
   );
@@ -37,16 +39,27 @@ class SignUpFormBase extends React.Component {
     const { navigation, firebase } = this.props;
     const { username, first_name, last_name, password } = this.state;
     firebase
-      .doCreateUserWithEmailAndPassword(`${username}@doctor.com`, password)
+      .doCreateUserWithEmailAndPassword(
+        `${username.trim()}@doctor.com`,
+        password
+      )
       .then(({ user }) =>
         firebase.firestore
           .collection("roles")
           .doc(user.uid)
           .set({ role: "doctor" })
+          .then(() =>
+            firebase.doCreateDoctor(
+              user.uid,
+              username,
+              first_name,
+              last_name,
+              []
+            )
+          )
       )
-      .then(() => firebase.doCreateDoctor(username, first_name, last_name, []))
       .then(() => {
-        navigation.navigate("App");
+        navigation.navigate("Loading");
       })
       .catch(error => {
         this.setState({ error });
