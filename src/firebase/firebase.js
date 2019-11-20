@@ -77,12 +77,12 @@ class Firebase {
       .doc(doctor_uid)
       .get()
       .then(doc => doc.data().patients);
-      doGetPatientInfo = patient_uid =>
-      this.firestore
-        .collection("patients")
-        .doc(patient_uid)
-        .get()
-        .then(doc => doc.data());
+  doGetPatientInfo = patient_uid =>
+    this.firestore
+      .collection("patients")
+      .doc(patient_uid)
+      .get()
+      .then(doc => doc.data());
   doGetPatientMedication = patient_uid =>
     this.firestore
       .collection("patients")

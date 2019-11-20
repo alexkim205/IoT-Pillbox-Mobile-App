@@ -17,7 +17,7 @@ WIP...
 * Scalable
 * Cheap
 * Cross-platform mobile app
-* Sync data to the cloud
+* Sync data to the cloud (Firebase)
 
 ## TODO
 
@@ -26,6 +26,8 @@ WIP...
 * Cleaner user interface for medications screen.
 * Filter by week and day.
 * Add today's date.
+* Bug: Fix Back Button for Patient Medication screen
+* Bug: Unhandled Promise Rejections during Patient Login
 
 ## Credits
 
