@@ -11,7 +11,7 @@ class LoadingScreenBase extends React.Component {
       if (!user) {
         navigation.navigate("EntryNavigator");
       } else {
-        firebase.firestore
+        return firebase.firestore
           .collection("roles")
           .doc(user.uid)
           .get()

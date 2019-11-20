@@ -44,7 +44,7 @@ class Firebase {
   doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 
   // *** Firestore ***
-  doCreatePatient = (uid, medical_id, first_name, last_name, p1, p2, p3) =>
+  doCreatePatient = (uid, medical_id, first_name, last_name, pills) =>
     this.firestore
       .collection("patients")
       .doc(uid)
@@ -52,9 +52,7 @@ class Firebase {
         medical_id,
         first_name,
         last_name,
-        p1,
-        p2,
-        p3
+        pills
       });
   doCreateDoctor = (uid, username, first_name, last_name, patients) =>
     this.firestore
@@ -72,6 +70,26 @@ class Firebase {
       .doc(doctor_uid)
       .update({
         patients: firebase.firestore.FieldValue.arrayUnion(patient_uid)
+      });
+  doGetPatientMedication = patient_uid =>
+    this.firestore.collection("patients").doc(patient_uid).get().then(doc => doc.data().pills);
+  doPutPatientTookPill = (patient_uid, pill_key, day_idx) => 
+    this.firestore
+      .collection("patients")
+      .doc(patient_uid)
+      .get()
+      .then(doc => {
+        const newTaken = doc.data().pills[pill_key].taken;
+        newTaken[day_idx] -= 1;
+        return newTaken;
+      })
+      .then(newTaken => {
+        const newPills = {};
+        newPills[`pills.${pill_key}.taken`] = newTaken;
+        return this.firestore
+          .collection("patients")
+          .doc(patient_uid)
+          .update(newPills);
       });
 }
 export default Firebase;

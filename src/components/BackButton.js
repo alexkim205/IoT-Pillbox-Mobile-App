@@ -10,7 +10,6 @@ import { Button, Icon } from "react-native-ui-kitten";
 class BackButton extends React.Component {
   onButtonPress = () => {
     const { navigation, scene } = this.props;
-    console.log("SCENE", scene);
     if (!scene) {
       navigation.dispatch(NavigationActions.back());
     } else {

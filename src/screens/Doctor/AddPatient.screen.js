@@ -46,9 +46,26 @@ class AddPatientFormBase extends React.Component {
               medical_id,
               first_name,
               last_name,
-              [0, 1, 2, 0, 1, 1, 1, 0],
-              [0, 0, 1, 0, 0, 1, 0],
-              [1, 1, 1, 1, 0, 0, 0]
+              {
+                p1: {
+                  name: "Vicodin",
+                  description: "pain management",
+                  prescribed: [0, 1, 2, 0, 1, 1, 1],
+                  taken: [0, 0, 0, 0, 0, 0, 0]
+                },
+                p2: {
+                  name: "Lipitor",
+                  description: "high cholesterol",
+                  prescribed: [0, 0, 1, 0, 0, 1, 0],
+                  taken: [0, 0, 1, 0, 0, 0, 0]
+                },
+                p3: {
+                  name: "Synthroid",
+                  description: "thyroid deficiency",
+                  prescribed: [1, 1, 2, 1, 0, 0, 0],
+                  taken: [0, 1, 1, 0, 0, 0, 0]
+                }
+              }
             )
           )
           .then(() => user.uid)

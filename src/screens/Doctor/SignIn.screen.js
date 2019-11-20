@@ -14,10 +14,7 @@ const INITIAL_STATE = {
 const SignInScreen = props => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-      <BackButton/>
-      <Text style={styles.title} category="h5">
-        Doctor Login
-      </Text>
+      <BackButton />
       <SignInForm navigation={props.navigation} />
     </KeyboardAvoidingView>
   );
@@ -53,49 +50,54 @@ class SignInFormBase extends React.Component {
 
   render() {
     return (
-      <View style={styles.card}>
-        <View style={styles.circle}>
-          <Icon name="person-done" width={80} height={80} fill="#FFFFFF" />
-        </View>
-        <View style={styles.errorbox}>
-          {this.state.error && (
-            <Text category="c2" status="danger">
-              {this.state.error.message}
-            </Text>
-          )}
-        </View>
-        <Input
-          style={styles.input}
-          value={this.state.username}
-          onChangeText={username => this.setState({ username })}
-          placeholder="Username"
-        />
-        <Input
-          style={styles.input}
-          value={this.state.password}
-          onChangeText={password => this.setState({ password })}
-          icon={this.renderIcon}
-          secureTextEntry={this.state.secureTextEntry}
-          onIconPress={this.onIconPress}
-          placeholder="Password"
-        />
-        <View style={styles.buttonbox}>
-          <Button
-            appearance="filled"
-            style={styles.buttonLeft}
-            status={"primary"}
-            onPress={this.onSubmit}
-          >
-            Sign In
-          </Button>
-          <Button
-            appearance="outline"
-            style={styles.buttonRight}
-            status={"primary"}
-            onPress={() => this.props.navigation.navigate("SignUp")}
-          >
-            Sign Up
-          </Button>
+      <View style={styles.base}>
+        <Text style={styles.title} category="h5">
+          Doctor Login
+        </Text>
+        <View style={styles.card}>
+          <View style={styles.circle}>
+            <Icon name="person-done" width={80} height={80} fill="#FFFFFF" />
+          </View>
+          <View style={styles.errorbox}>
+            {this.state.error && (
+              <Text category="c2" status="danger">
+                {this.state.error.message}
+              </Text>
+            )}
+          </View>
+          <Input
+            style={styles.input}
+            value={this.state.username}
+            onChangeText={username => this.setState({ username })}
+            placeholder="Username"
+          />
+          <Input
+            style={styles.input}
+            value={this.state.password}
+            onChangeText={password => this.setState({ password })}
+            icon={this.renderIcon}
+            secureTextEntry={this.state.secureTextEntry}
+            onIconPress={this.onIconPress}
+            placeholder="Password"
+          />
+          <View style={styles.buttonbox}>
+            <Button
+              appearance="filled"
+              style={styles.buttonLeft}
+              status={"primary"}
+              onPress={this.onSubmit}
+            >
+              Sign In
+            </Button>
+            <Button
+              appearance="outline"
+              style={styles.buttonRight}
+              status={"primary"}
+              onPress={() => this.props.navigation.navigate("SignUp")}
+            >
+              Sign Up
+            </Button>
+          </View>
         </View>
       </View>
     );
@@ -110,8 +112,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
+  base: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
   title: {
-    marginVertical: 10
+    marginVertical: 10,
   },
   circle: {
     borderRadius: 100,

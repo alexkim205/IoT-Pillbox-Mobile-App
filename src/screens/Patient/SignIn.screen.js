@@ -2,6 +2,7 @@ import React from "react";
 import { KeyboardAvoidingView, StyleSheet, View } from "react-native";
 import { Text, Button, Input, Icon } from "react-native-ui-kitten";
 import { withFirebase } from "../../firebase";
+import BackButton from "../../components/BackButton";
 
 const INITIAL_STATE = {
   first_name: "",
@@ -13,9 +14,7 @@ const INITIAL_STATE = {
 const SignInScreen = props => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-      <Text style={styles.title} category="h5">
-        Patient Login
-      </Text>
+      <BackButton />
       <SignInForm />
     </KeyboardAvoidingView>
   );
@@ -29,7 +28,7 @@ class SignInFormBase extends React.Component {
     const { first_name, last_name, medical_id } = this.state;
     firebase
       .doSignInWithEmailAndPassword(
-        `${first_name.trim()}_${last_name.trim()}_${medical_id.trim()}@xyz.com`,
+        `${first_name.trim()}_${last_name.trim()}_${medical_id.trim()}@patient.com`,
         medical_id
       )
       .then(() => {
@@ -44,42 +43,47 @@ class SignInFormBase extends React.Component {
 
   render() {
     return (
-      <View style={styles.card}>
-        <View style={styles.circle}>
-          <Icon name="person" width={80} height={80} fill="#FFFFFF" />
+      <View style={styles.base}>
+        <Text style={styles.title} category="h5">
+          Patient Login
+        </Text>
+        <View style={styles.card}>
+          <View style={styles.circle}>
+            <Icon name="person" width={80} height={80} fill="#FFFFFF" />
+          </View>
+          <View style={styles.errorbox}>
+            {this.state.error && (
+              <Text category="c2" status="danger">
+                {this.state.error.message}
+              </Text>
+            )}
+          </View>
+          <Input
+            style={styles.input}
+            value={this.state.first_name}
+            onChangeText={first_name => this.setState({ first_name })}
+            placeholder="First"
+          />
+          <Input
+            style={styles.input}
+            value={this.state.last_name}
+            onChangeText={last_name => this.setState({ last_name })}
+            placeholder="Last"
+          />
+          <Input
+            style={styles.input}
+            value={this.state.medical_id}
+            onChangeText={medical_id => this.setState({ medical_id })}
+            placeholder="Medical ID"
+          />
+          <Button
+            style={styles.button}
+            status={"primary"}
+            onPress={this.onSubmit}
+          >
+            Sign In
+          </Button>
         </View>
-        <View style={styles.errorbox}>
-          {this.state.error && (
-            <Text category="c2" status="danger">
-              {this.state.error.message}
-            </Text>
-          )}
-        </View>
-        <Input
-          style={styles.input}
-          value={this.state.first_name}
-          onChangeText={first_name => this.setState({ first_name })}
-          placeholder="First"
-        />
-        <Input
-          style={styles.input}
-          value={this.state.last_name}
-          onChangeText={last_name => this.setState({ last_name })}
-          placeholder="Last"
-        />
-        <Input
-          style={styles.input}
-          value={this.state.medical_id}
-          onChangeText={medical_id => this.setState({ medical_id })}
-          placeholder="Medical ID"
-        />
-        <Button
-          style={styles.button}
-          status={"primary"}
-          onPress={this.onSubmit}
-        >
-          Sign In
-        </Button>
       </View>
     );
   }
@@ -93,8 +97,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
+  base: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
   title: {
-    marginVertical: 10
+    marginVertical: 10,
   },
   circle: {
     borderRadius: 100,
