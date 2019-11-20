@@ -66,11 +66,9 @@ class MedicationsListBase extends React.Component {
           </View>
         </View>
         {medications &&
-          Object.keys(medications).map((k, i) => {
-            console.log(medications[k]);
-
-            return <MedicineCard info={medications[k]} key={i} />;
-          })}
+          Object.keys(medications).map((k, i) => (
+            <MedicineCard info={medications[k]} key={i} />
+          ))}
       </ScrollView>
     );
   }
@@ -112,9 +110,10 @@ const styles = StyleSheet.create({
   },
   textRow: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
+    width: "100%"
   },
-  gray: { color: "#747474", width: 50 },
+  gray: { color: "#747474", width: 85 },
   textData: { fontWeight: "600" }
 });
 

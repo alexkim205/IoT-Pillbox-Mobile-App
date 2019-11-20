@@ -43,10 +43,7 @@ class PatientsListBase extends React.Component {
               )
             )
           )
-          .then(patient_infos => {
-            console.log("PATIENTS", patient_infos);
-            return this.setState({ patients: patient_infos });
-          });
+          .then(patient_infos => this.setState({ patients: patient_infos }));
       }
     });
   }

@@ -33,7 +33,6 @@ class MedicineCard extends React.Component {
           style={styles.description}
         >{`Prescribed for ${description}.`}</Text>
         {zipped.map(([p, t], i) => {
-          console.log(p, t, i);
           if (p === 0) return;
           let color = "#C4C4C4",
             textColor = "#747474";
