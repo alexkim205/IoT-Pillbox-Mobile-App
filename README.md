@@ -26,3 +26,11 @@ WIP...
 * Cleaner user interface for medications screen.
 * Filter by week and day.
 * Add today's date.
+
+## Credits
+
+Software: Alex Kim
+
+Hardware: Ryan Davies and Sabin Zarrandikoetxea
+
+Final Project for IoT EECS 4764 @ Columbia University
