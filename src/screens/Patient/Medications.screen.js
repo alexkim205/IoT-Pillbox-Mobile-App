@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
-import { SafeAreaView } from "react-navigation";
+import { SafeAreaView, withNavigation } from "react-navigation";
 import { Text } from "react-native-ui-kitten";
 import { withFirebase } from "../../firebase";
 import BackButton from "../../components/BackButton";
@@ -32,7 +32,6 @@ class MedicationsListBase extends React.Component {
         navigation.navigate("Auth");
       } else {
         return firebase.doGetPatientMedication(user.uid).then(medications => {
-          console.log("MEDICATIONS", medications);
           return this.setState({ medications });
         });
       }
@@ -41,22 +40,19 @@ class MedicationsListBase extends React.Component {
 
   render() {
     const { medications } = this.state;
-    console.log("RENDER", medications);
 
     return (
       <ScrollView contentContainerStyle={styles.scroll}>
         {medications &&
-          Object.keys(medications).map((k, i) => {
-            console.log(medications[k]);
-
-            return <MedicineCard info={medications[k]} key={i} />;
-          })}
+          Object.keys(medications).map((k, i) => (
+            <MedicineCard info={medications[k]} key={i} />
+          ))}
       </ScrollView>
     );
   }
 }
 
-const MedicationsList = withFirebase(MedicationsListBase);
+const MedicationsList = withNavigation(withFirebase(MedicationsListBase));
 
 const styles = StyleSheet.create({
   container: {

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Text, Button, Input, Icon } from "react-native-ui-kitten";
+import { Text} from "react-native-ui-kitten";
 import { withFirebase } from "../firebase";
 import { withNavigation } from "react-navigation";
 import { zip } from "lodash";
@@ -79,12 +79,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    marginTop: 30,
-    textAlign: "left"
+    marginTop: 30
   },
   name: {
     fontWeight: "600",
-    marginBottom: 5
+    marginVertical: 5
   },
   description: {
     marginBottom: 15,

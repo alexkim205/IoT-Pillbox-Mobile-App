@@ -71,9 +71,25 @@ class Firebase {
       .update({
         patients: firebase.firestore.FieldValue.arrayUnion(patient_uid)
       });
+  doGetDoctorPatients = doctor_uid =>
+    this.firestore
+      .collection("doctors")
+      .doc(doctor_uid)
+      .get()
+      .then(doc => doc.data().patients);
+      doGetPatientInfo = patient_uid =>
+      this.firestore
+        .collection("patients")
+        .doc(patient_uid)
+        .get()
+        .then(doc => doc.data());
   doGetPatientMedication = patient_uid =>
-    this.firestore.collection("patients").doc(patient_uid).get().then(doc => doc.data().pills);
-  doPutPatientTookPill = (patient_uid, pill_key, day_idx) => 
+    this.firestore
+      .collection("patients")
+      .doc(patient_uid)
+      .get()
+      .then(doc => doc.data().pills);
+  doPutPatientTookPill = (patient_uid, pill_key, day_idx) =>
     this.firestore
       .collection("patients")
       .doc(patient_uid)
