@@ -16,30 +16,28 @@ We propose an IoT device that can be used to dispense pills at prescribed interv
 
 Preliminary [Figma](https://www.figma.com/file/n52F2af3phI5fLh4h6jMd5/IoT-Final-Project-Pill-box?node-id=0%3A1)
 
-<p align="center">
-<img src="docs/imgs/IMG_6680.PNG?raw=true" width="200">
-</p>
-
 ### Doctor Flow
 
 <p align="center">
-<img src="docs/imgs/IMG_6681.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6682.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6683.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6684.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6686.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6687.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6688.PNG?raw=true" width="200">
+<img src="docs/imgs/IMG_6680.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6681.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6682.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6683.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6684.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6686.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6687.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6688.PNG?raw=true" width="250">
 </p>
 
 ### Patient Flow
 
 <p align="center">
-<img src="docs/imgs/IMG_6689.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6690.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6692.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6693.PNG?raw=true" width="200">
-<img src="docs/imgs/IMG_6694.PNG?raw=true" width="200">
+<img src="docs/imgs/IMG_6680.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6689.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6690.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6692.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6693.PNG?raw=true" width="250">
+<img src="docs/imgs/IMG_6694.PNG?raw=true" width="250">
 </p>
 
 ## Features
