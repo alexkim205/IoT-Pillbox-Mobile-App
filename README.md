@@ -10,14 +10,28 @@ There is a need to lower the barriers for the administration of daily medication
 
 We propose an IoT device that can be used to dispense pills at prescribed intervals throughout the week. The device will interface with a mobile app that both physicians and patients can use to keep track of their weekly progress. Primary care doctors can register patients with a medical code, which the patient can then use to login and access their records.
 
-WIP...
+*WIP...*
+
+Preliminary [Figma](https://www.figma.com/file/n52F2af3phI5fLh4h6jMd5/IoT-Final-Project-Pill-box?node-id=0%3A1)
+
+### Doctor Flow
+
+### Patient Flow
 
 ## Features
 
 * Scalable
 * Cheap
 * Cross-platform mobile app
-* Sync data to the cloud (Firebase)
+* Sync data to the cloud
+
+### Tech Stack
+
+* React Native w/ Expo
+* React Native UI Kitten
+* React Navigation
+* Firebase
+* Figma for prototyping
 
 ## TODO
 
