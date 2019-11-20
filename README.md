@@ -16,7 +16,7 @@ We propose an IoT device that can be used to dispense pills at prescribed interv
 
 Preliminary [Figma](https://www.figma.com/file/n52F2af3phI5fLh4h6jMd5/IoT-Final-Project-Pill-box?node-id=0%3A1)
 
-![Entry](docs/imgs/IMG_6680.PNG?raw=true)
+![Entry](docs/imgs/IMG_6680.PNG?raw=true | width=100)
 
 ### Doctor Flow
 
