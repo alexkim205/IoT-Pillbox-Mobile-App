@@ -1,4 +1,6 @@
-# Mobile App for IoT Pill Box
+# A Mobile App to Improve Daily Medication Compliance
+
+**Tagline - Improving Patient Compliance: An IoT Hardware + Software Solution**
 
 ## Problem Statement
 
@@ -13,6 +15,8 @@ We propose an IoT device that can be used to dispense pills at prescribed interv
 *WIP...*
 
 Preliminary [Figma](https://www.figma.com/file/n52F2af3phI5fLh4h6jMd5/IoT-Final-Project-Pill-box?node-id=0%3A1)
+
+![Entry](docs/imgs/IMG_6680.PNG?raw=true)
 
 ### Doctor Flow
 
