@@ -19,7 +19,7 @@ Preliminary [Figma](https://www.figma.com/file/n52F2af3phI5fLh4h6jMd5/IoT-Final-
 ### Doctor Flow
 
 <p align="center">
-<img src="docs/imgs/IMG_6680.PNG?raw=true" width="250" style="border: 2px solid #747474; border-radius: 10px;">
+<img src="docs/imgs/IMG_6680.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6681.PNG?raw=true" width="250">
 <img src="docs/imgs/IMG_6682.PNG?raw=true" width="250">
 <img src="docs/imgs/IMG_6683.PNG?raw=true" width="250">
