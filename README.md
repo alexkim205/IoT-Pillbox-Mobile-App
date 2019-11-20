@@ -20,9 +20,9 @@ Preliminary [Figma](https://www.figma.com/file/n52F2af3phI5fLh4h6jMd5/IoT-Final-
 
 <p align="center">
 <img src="docs/imgs/IMG_6680.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/imgs/IMG_6681.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6682.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6683.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6681.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6684.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6686.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6687.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
@@ -33,7 +33,6 @@ Preliminary [Figma](https://www.figma.com/file/n52F2af3phI5fLh4h6jMd5/IoT-Final-
 
 <p align="center">
 <img src="docs/imgs/IMG_6680.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6689.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6690.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6692.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 <img src="docs/imgs/IMG_6693.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
