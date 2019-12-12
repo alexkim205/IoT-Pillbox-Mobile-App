@@ -49,6 +49,7 @@ class Firebase {
       .collection("patients")
       .doc(uid)
       .set({
+        user_uuid: uid,
         medical_id,
         first_name,
         last_name,
@@ -59,6 +60,7 @@ class Firebase {
       .collection("doctors")
       .doc(uid)
       .set({
+        user_uuid: uid,
         username,
         first_name,
         last_name,
@@ -107,5 +109,46 @@ class Firebase {
           .doc(patient_uid)
           .update(newPills);
       });
+  doDispenseAllPatientPills = (patient_uid, pill_key, day_idx) =>
+    this.firestore
+      .collection("patients")
+      .doc(patient_uid)
+      .get()
+      .then(doc => {
+        const prescribed = doc.data().pills[pill_key].prescribed;
+        const newTaken = doc.data().pills[pill_key].taken;
+        newTaken[day_idx] = prescribed[day_idx];
+        return newTaken;
+      })
+      .then(newTaken => {
+        const newPills = {};
+        newPills[`pills.${pill_key}.taken`] = newTaken;
+        return this.firestore
+          .collection("patients")
+          .doc(patient_uid)
+          .update(newPills);
+      });
+  doResetPills = (patient_uid, pill_key, day_idx) =>
+    this.firestore
+      .collection("patients")
+      .doc(patient_uid)
+      .get()
+      .then(doc => {
+        const newTaken = doc.data().pills[pill_key].taken;
+        newTaken[day_idx] = 0;
+        return newTaken;
+      })
+      .then(newTaken => {
+        const newPills = {};
+        newPills[`pills.${pill_key}.taken`] = newTaken;
+        return this.firestore
+          .collection("patients")
+          .doc(patient_uid)
+          .update(newPills);
+      });
+    doListenToPatientMedications = (patient_uid) =>
+    this.firestore.collection('patients').doc(patient_uid).onSnapshot(function(doc) {
+      return
+    })
 }
 export default Firebase;
