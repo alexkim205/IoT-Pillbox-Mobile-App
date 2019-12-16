@@ -2,6 +2,8 @@
 
 **Tagline - Improving Patient Compliance: An IoT Hardware + Software Solution**
 
+[Project Website](https://alexkim205.github.io/IoT-Pillbox-Mobile-App/)
+
 ## Problem Statement
 
 Nearly three out of five Americans are prescribed daily medication, however only about half of patients with chronic diseases take their medicine. It can be challenging for health care providers to treat patients effectively, as non-compliance can lead to severe health consequences. It can also be challenging for patients to adhere to instructions due to common deterrents such as medicine costs, illiteracy, long wait times, and depression.
