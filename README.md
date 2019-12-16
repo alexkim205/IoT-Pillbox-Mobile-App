@@ -10,9 +10,15 @@ There is a need to lower the barriers for the administration of daily medication
 
 ## Proposed Solution
 
-We propose an IoT device that can be used to dispense pills at prescribed intervals throughout the week. The device will interface with a mobile app that both physicians and patients can use to keep track of their weekly progress. Primary care doctors can register patients with a medical code, which the patient can then use to login and access their records.
+This project aims to solve two major problems related to routine medication that IoT is well positioned to solve: non-compliance and the trend towards more mobile interactions with doctors.
 
-*WIP...*
+Non-compliance is a major issue for the medical community and is extremely difficult to solve. Patients often forget or skip taking medications that are critical to their wellbeing and don't admit this to their physician. Sometimes they make a genuine mistake and just don't know which pills to take when. This degrades the physicians ability to diagnose the problems they face due to lack of information on how well the patient follows their instructions. One way this is addressed is by having authorised personal track and dispense the correct medication but this is resource intensive and not an option in many cases.
+
+Another issue that faces the community is that while the increase in online consultations offers people much easier access to medical help, the ability to change and deliver perscriptions lags behind. A simple search shows many new services that offer the expertise of a medical professional online or by phone call but getting actually getting the perscription remains an issue. Being able to call ones family doctor to update them on circumstances and have access to an immediately updated perscription would remove a barrier to healthcare that millions of people could benefit from.
+
+These issues are most prevalent in places where chronic healthcares issues are the main problem. Thus, an ideal place to test whether this device would be useful is a retirement village where it could be placed in a central location to allow all citizens easy access to their medication. From here, the convenience and efficiency could scale up to use in pharmacies and possibly even private use.
+
+Our proposal is for a pill dispenser that connects to an online app that will control which and how many pills are dispensed. This project uses both IoT and embedded systems to implement the desired functionality. The combination allows for the connectivity and ability to accurately dispense that will be critical in making this feasible.
 
 Preliminary [Figma](https://www.figma.com/file/n52F2af3phI5fLh4h6jMd5/IoT-Final-Project-Pill-box?node-id=0%3A1)
 
@@ -52,14 +58,14 @@ Final Project for IoT EECS 4764 @ Columbia University
 ## Doctor Flow
 
 <p align="center">
-<img src="docs/imgs/IMG_6680.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6681.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6682.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6683.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6684.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6686.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6687.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
-<img src="docs/imgs/IMG_6688.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/images/IMG_6680.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/images/IMG_6681.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/images/IMG_6682.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/images/IMG_6684.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/images/IMG_6686.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/images/IMG_6683.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/images/IMG_6687.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
+<img src="docs/images/IMG_6688.PNG?raw=true" width="250" style="border: 2px solid black; border-radius: 10px;">
 </p>
 
 ## Patient Flow
