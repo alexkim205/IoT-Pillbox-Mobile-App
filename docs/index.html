@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Columbia University EECS E4764 IoT Project Report #0</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!-- <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
+							<h1 id="title">Smart Dose</h1>
+							<p>Columbia University <br>
+								EECS E4764 Fall'19 Internet of Things<br>
+								Intelligent and Connected Systems<br>
+								Team 0 Project Report
+							</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Abstract</span></a></li>
+								<li><a href="#motivation" id="motivation-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Motivation</span></a></li>
+								<li><a href="#system" id="system-link" class="skel-layers-ignoreHref"><span class="icon fa-th">System</span></a></li>
+								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Results</span></a></li>
+								<li><a href="#references" id="references-link" class="skel-layers-ignoreHref"><span class="icon fa-th">References</span></a></li>
+								<li><a href="#team" id="team-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Our Team</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/RkQehspglhs" frameborder="0" allowfullscreen></iframe>
+
+								<h2 class="alt">Smart Dose</h2>
+								<p>The Smart Pill Dispenser is an innovative way to track and control the distribution of medication more efficiently and flexibly than is currently done.</p>
+								<p>It accomplishes this by using IoT and embedded system principles to automate the process of dispensing pills and add smart functionality that allows physicians to track whether patients collect their medication regularly.</p>
+
+
+							<footer>
+								<a href="#motivation" class="button scrolly">Motivation</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="motivation" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Motivation</h2>
+							</header>
+
+							<p align="left">This project aims to solve two major problems related to routine medication that IoT is well positioned to solve: non-compliance and the trend towards more mobile interactions with doctors.</p>
+<p align="left">Non-compliance is a major issue for the medical community and is extremely difficult to solve. Patients often forget or skip taking medications that are critical to their wellbeing and don't admit this to their physician. Sometimes they make a genuine mistake and just don't know which pills to take when. This degrades the physicians ability to diagnose the problems they face due to lack of information on how well the patient follows their instructions. One way this is addressed is by having authorised personal track and dispense the correct medication but this is resource intensive and not an option in many cases.</p>
+<p align="left">Another issue that faces the community is that while the increase in online consultations offers people much easier access to medical help, the ability to change and deliver perscriptions lags behind. A simple search shows many new services that offer the expertise of a medical professional online or by phone call but getting actually getting the perscription remains an issue. Being able to call ones family doctor to update them on circumstances and have access to an immediately updated perscription would remove a barrier to healthcare that millions of people could benefit from.</p>
+<p align="left">These issues are most prevalent in places where chronic healthcares issues are the main problem. Thus, an ideal place to test whether this device would be useful is a retirement village where it could be placed in a central location to allow all citizens easy access to their medication. From here, the convenience and efficiency could scale up to use in pharmacies and possibly even private use.
+
+</p>
+
+
+						</div>
+					</section>
+
+
+					<section id="system" class="three">
+						<div class="container">
+
+							<header>
+								<h2>System</h2>
+							</header>
+
+							<p align="left">Our proposal is for a pill dispenser that connects to an online app that will control which and how many pills are dispensed. This project uses both IoT and embedded systems to implement the desired functionality. The combination allows for the connectivity and ability to accurately dispense that will be critical in making this feasible.
+
+</p>
+
+							<h3 align="left">Architecture</h3>
+
+							<p align="left">The cornerstone of this project is the Doctor-Patient app, which allows convenient access for both parties. Patients can log-in to see whether they have taken their required medication and what they can expect to be provided with in the future. Doctors can log in to view the data related to each patient and even change what will be dispensed.</p>
+
+							<p align="center">
+							
+							<a style="color: red;" href="https://github.com/alexkim205/IoT-Pillbox-Mobile-App" target="_blank">Link to Github repository for Smart IoT App.</a>
+							</p>
+<p align="left">In order to actuate the physical side of this project, an embedded layer will control how the pills are actually dispensed and the peripheral systems associated with it. This requires controlled use of servos, displays, and numerous sensors.
+
+
+</p>
+
+							<h3 align="left">Technical Components</h3>
+
+							<h4>Application:</h4>
+							<h4>Embedded Systems:</h4>
+
+							<article class="item">
+								<img src="images/Pill Dispenser sch.jpg" alt="" style="width: 100%;"/>
+							</article>
+
+							<article class="item">
+								<img src="images/Pill Dispenser brd.jpg" alt="" style="width: 100%;"/>
+							</article>
+
+<p align="left">Our physical design is the backbone of the project and used plywood towers to hold funnels that allow a single pill to be collected by a cavity below it. When rotated by a servo motor, this pill is is moved above the ramp and falls down towards it. The ramp is directed towards a central collection hub for all of the pills.
+
+</p>
+<p align="left">We use an ESP8266 to interface with the database associated with the app. It requests updates to it regularly to keep track of what each patient should receive and then communicates this to the Arduino Nano which controls the physical dispensing.
+
+</p>
+<p align="left">The hub of most of the control in this section is controlled by an Arduino Nano. This board takes in information from the limit switches, IR detectors, alarm, and ESP8266 which it then uses to activate the servos when required to dispense the various pills. A secondary Nano turns on an alarm when the lids of the pill holders are taken off without authorization.
+
+</p>
+<p align="left">Servo motors provided the means by which the pills were moved. They were controlled by a PWM signal that was generated by the Nano.
+
+</p>
+<p align="left">To track whether pills were dispensed or not, IR detectors were placed below the towers such that if a pill fell down it would trigger the sensor. This was then interpreted by the Nano as a successful dispense. If it was not detected, the system would wait in position for a while and then show an error.
+
+</p>
+<p align="left">Limit switches placed on the lids of the pill holders allow for an alarm to alert staff to anyone wishing to steal medications. The alarm is currently implemented with a noise emitting alarm but could just as easily be a message sent to the relevant authorities.
+
+</p>
+<p align="left">Patient identification is accomplished through the use of a fingerprint scanner. The one we have used can store up to 127 finger prints and allows patients to easily access the pill dispenser without fear of someone stealing their medications.
+
+</p>
+
+							<h3 align="left">Prototype</h3>
+
+							<p align="left">Our prototype was designed to be able to dispense three types of pills with a storage capacity of around 50 pills each. Since the fingerprint sensor requires enrollment outside normal functioning, we used our three fingerprints as the configured users. Both of these aspects could easily be scaled up for permanent use. The goal of this prototype is to be a proof of concept that pills can be dispensed as directed by the application.
+
+</p>
+
+							<article class="item">
+								<img src="images/Pill Dispenser Model.jpg" alt="" style="width: 100%;"/>
+								<header>
+									<h3>Caption</h3>
+								</header>
+							</article>
+
+
+
+						</div>
+					</section>
+
+
+					<section id="results" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Results</h2>
+							</header>
+
+
+							<p align="left">Our prototype was a success and was able to dispense pills correctly after interacting with the parent app. The application executed its function perfectly and provided the data to accurately execute in the physical space. While some reliability issues remain in they physical space, the device is able to identify patients and dispense the correct dosages in a time effective mannar and while tracking if the pills were dispensed as desired.
+
+</p>
+
+							<p align="left">There were a few ways this project could have been improved. By finding a microcontroller with more I/O pins and integrated WiFi the need to communicate across controllers would have been reduced. This would allow for more efficient control and collision avoidance. Another way to improve this project would be to use better parts. A serious consideration in this project was the limited movement range of the servos and the limited sensing capability of the IR sensors. Finally, 3D printing the structure would have reduced the natural tolerances invokes by working with plywood and allow more reliability.
+
+</p>
+
+						</div>
+					</section>
+
+					<section id="references" class="three">
+						<div class="container">
+
+							<header>
+								<h2>References</h2>
+							</header>
+
+							<p align="left">
+Patient Non-Compliance: https://jaoa.org/article.aspx?articleid=2538817
+</p>
+							<p align="left">
+Examples of Private Pill Dispensers: https://www.epill.com</p>
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="team" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Our Team</h2>
+							</header>
+
+							<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+
+
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Alex Kim</h3>
+											<p>Software: Designed Doctor-Patient App and connection to ESP8266.
+
+</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Sabin Zarrandikoetxea
+</h3>
+											<p>Hardware: Designed structure and PCBs.
+
+</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Ryan Davies
+</h3>
+											<p>Embedded Systems: Designed control systems for electric components.
+
+</p>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p align="left">
+								<strong>Contact Name 1: </strong>Ryan Davies rtd2119@columbia.edu</br>
+								<strong>Contact Name 2: </strong>Alex Kim agk2144@columbia.edu</br>
+								<strong>Contact Name 3: </strong>Sabin Zarrandikoetxea sz2859@columbia.edu</br>
+							</br>
+								<strong>Columbia University </strong><a href="http://www.ee.columbia.edu">Department of Electrical Engineering</a><br>
+								<!-- <strong>Class Website:</strong>
+									<a href="https://edblogs.columbia.edu/eecs4764-001-2019-3/">Columbia University EECS E4764 Fall '19 IoT</a></br> -->
+								<strong>Instructor:</strong> <a href="http://fredjiang.com/">Professsor Xiaofan (Fred) Jiang</a>
+							</p>
+
+
+							<!-- <form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form> -->
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; IoT Project | All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
