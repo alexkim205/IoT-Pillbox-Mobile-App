@@ -36,14 +36,15 @@ class MedicineCard extends React.Component {
           if (p === 0) return;
           let color = "#C4C4C4",
             textColor = "#747474";
-          if (i < today) {
+            console.log(i, today)
+          if (i <= today) {
             if (t >= p) {
               color = "#46E297";
             } else {
               color = "#FF7A7A";
             }
           }
-          if (i < today) {
+          if (i <= today) {
             textColor = "#000000";
           } else if (i === today) {
             textColor = "#4876FF";

@@ -23,6 +23,14 @@ const EntryScreen = props => {
       >
         I am a doctor.
       </Button>
+      {/* <Button
+        style={styles.button}
+        status={"success"}
+        onPress={() => navigation.navigate("Admin")}
+        size='large'
+      >
+        Debug.
+      </Button> */}
     </Layout>
   );
 };

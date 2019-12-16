@@ -36,6 +36,9 @@ class MedicationsListBase extends React.Component {
         });
       }
     });
+    // firebase.firestore.collection('patients').doc(patient_uid).onSnapshot(function(doc) {
+    //   this.forceUpdate()
+    // })
   }
 
   render() {
